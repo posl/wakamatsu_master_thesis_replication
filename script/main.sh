@@ -36,7 +36,6 @@ if [ 0 -eq ${fixer} ]; then
     exit 0
 elif [ 1 -eq ${fixer} ]; then
     #execute
-    python3 ./MyReport.py AVATAR Math_${id}
     /bin/bash ./AVATARCompile.sh
     /bin/bash ./AVATARFix.sh Math ${id}
     #set_dir
@@ -44,7 +43,6 @@ elif [ 1 -eq ${fixer} ]; then
     patch_dir="/AVATAR/OUTPUT/"
     fl_dir="/AVATAR/SuspiciousCodePositions/"
 elif [ 2 -eq ${fixer} ]; then
-    python3 ./MyReport.py TBar Math_${id}
     if [ 1 -eq ${is_evo} ]; then
         rm -r /TBar/SuspiciousCodePositions
         cp -r /SuspiciousCodePositions /TBar
@@ -53,7 +51,6 @@ elif [ 2 -eq ${fixer} ]; then
     out_dir="${out_dir}/TBar/last/OUTPUT_${id}_${is_evo}"
     patch_dir="/TBar/OUTPUT/"
 elif [ 3 -eq ${fixer} ]; then
-    python3 ./MyReport.py SimFix Math_${id}
     /bin/bash ./SimFix.sh math ${id}
     out_dir="${out_dir}/SimFix/a/OUTPUT_${id}_${is_evo}"
     patch_dir="/SimFix/patch/math/${id}"
